@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 style="color:brown">Welcome to the Guessing Game!</h1>
+
+<p><strong> click the button to start the game</strong></p>
+
+<button onclick="playGame()">Play Game</button>
+
+<p id="game"></p>
+
+<script>
+function playGame() {
+  let userInput = prompt("Please guess a random number between 1 and 10", "5");
+  const randomNum = Math.floor(Math.random()*10) + 1;
+  num = Number(userInput);
+    //document.write(num);
+    if(randomNum === num) {
+        document.write("<h4>Congratulations! You guessed the number!</h4>"); 
+    }
+    else {
+        window.alert('You gussed Wrong.. Please try again!');
+        let userInput1 = prompt("Please guess another number between 1 and 10 other than "+num);
+        num1 = Number(userInput1);
+        if(randomNum === num1) {
+            document.write("<h4>Congratulations! Your second guess is correct!</h4>");
+        }
+        else {
+            window.alert('You gussed wrong again!. This is your third and last attempt to guess!');
+            let userInput2 = prompt("Please enter your third guess between 1 and 10 other than "+num+ " and " +num1);
+            num2 = Number(userInput2);
+            if(randomNum===num2) {
+                document.write("<h4>Congratulations! Your third guess is correct!</h4>");
+            }
+            else {
+                document.write("<h4>You gussed it wrong again!! <h1>GAME OVER!!</h1><h4> The random number generated was: "+randomNum+"</h4>");
+                //<button onclick="playGame()">Play Again</button>
+            }
+        }
+      
+    }
+  }
+
+</script>
+
+</body>
+</html>
